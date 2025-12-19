@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* -- LIGHT THEME (DEFAULT) -- */
+:root {
+  --background: 255 255 255;
+  --foreground: 15 23 42;
+  --card: 255 255 255;
+  --border: 226 232 240;
+  --primary: 37 99 235;
+}
+
+/* --- DARK THEME --- */
+.dark {
+  --background: 2 6 23;
+  --foreground: 248 250 252;
+  --card: 15 23 42;
+  --border: 51 65 85;
+  --primary: 59 130 246;
+}
+
+
