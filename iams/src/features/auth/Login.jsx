@@ -7,38 +7,35 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 px-4">
-      <div className="relative w-full max-w-md bg-slate-900/70 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-slate-700">
-        
-          {/* 🌗 Theme Toggle */}
+    <div className="min-h-screen flex items-center justify-center px-4 bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
+         {/* 🌗 Theme Toggle */}
         <button
           onClick={() =>
             setTheme(theme === "dark" ? "light" : "dark")
           }
-          className="absolute top-4 right-4 p-2 rounded-lg
-            bg-slate-800 hover:bg-slate-700
-            border border-slate-600 transition"
-          title="Toggle theme"
-        >
+          className="absolute top-4 right-4 p-2 rounded-lg bg-[rgb(var(--card))] border border-[rgb(var(--border))] hover:opacity-80 transition" >
           {theme === "dark" ? (
-            <Sun className="h-4 w-4 text-yellow-400" />
+            <Sun className="h-4 w-4 text-[rgb(var(--text))]" />
           ) : (
-            <Moon className="h-4 w-4 text-slate-200" />
+            <Moon className="h-4 w-4 text-[rgb(var(--text))]" />
           )}
         </button>
 
+        {/* Login Card */}
+      <div className="relative w-full max-w-md p-8 rounded-2xl shadow-2xl bg-[rgb(var(--card))] border border-[rgb(var(--border))]">
+
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="h-14 w-14 rounded-xl bg-blue-600 flex items-center justify-center">
-            <span className="text-white font-semibold text-xl">IAMS</span>
-          </div>
+            <span className="text-white font-semibold text-xl">
+              <img src="../../public/nwsc-logo.jfif" alt="Logo" className="h-20 w-20 rounded-xl" />
+            </span>
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl font-semibold text-white text-center">
-          NWSC Internal Audit Management System
+        <h1 className="text-2xl font-semibold text-center text-[rgb(var(--text))]">
+          Internal Audit Management System
         </h1>
-        <p className="text-sm text-slate-400 text-center mt-1">
+        <p className="text-sm text-center mt-1 text-[rgb(var(--text))]">
           Enter your HRMS credentials to log in.
         </p>
 
@@ -47,7 +44,7 @@ export default function Login() {
           
           {/* Username */}
           <div>
-            <label className="block text-sm text-slate-300 mb-1">
+            <label className="block text-sm mb-1 text-[rgb(var(--text))]">
               Username
             </label>
             <div className="relative">
@@ -55,14 +52,14 @@ export default function Login() {
               <input
                 type="text"
                 placeholder="Enter username"
-                className="w-full pl-10 pr-4 py-3 rounded-lg bg-slate-800 text-white placeholder-slate-500 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full pl-10 pr-4 py-3 rounded-lg bg-slate-800 text-white placeholder-text-[rgb(var(--text))] border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
             </div>
           </div>
 
           {/* Password */}
           <div>
-            <label className="block text-sm text-slate-300 mb-1">
+            <label className="block text-sm mb-1 text-[rgb(var(--text))]">
               Password
             </label>
             <div className="relative">
@@ -70,7 +67,7 @@ export default function Login() {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
-                className="w-full pl-10 pr-10 py-3 rounded-lg bg-slate-800 text-white placeholder-slate-500 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full pl-10 pr-10 py-3 rounded-lg bg-slate-800 text-white placeholder-text-[rgb(var(--text))] border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
               <button
                 type="button"
@@ -102,7 +99,7 @@ export default function Login() {
         </form>
 
         {/* Footer */}
-        <p className="text-xs text-slate-500 text-center mt-6">
+        <p className="text-xs text-[rgb(var(--text))] text-center mt-6">
           © {new Date().getFullYear()} NWSC – Applications Department
         </p>
       </div>
