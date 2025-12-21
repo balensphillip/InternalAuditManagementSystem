@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { Eye, EyeOff, Lock, User, Sun, Moon } from "lucide-react";
 import useTheme from "../../hooks/useTheme";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
    const { theme, setTheme } = useTheme();
    const [showPassword, setShowPassword] = useState(false);
+   const navigate = useNavigate();
 
+   const handleSubmit = (e) => {
+     e.preventDefault();  
+     navigate("/dashboard");
+   };
+ 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
+      
          {/* 🌗 Theme Toggle */}
         <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="absolute top-4 right-4 p-2 rounded-lg bg-[rgb(var(--card))] border border-[rgb(var(--border))] hover:opacity-80 transition" >
@@ -29,7 +37,7 @@ export default function Login() {
         <p className="text-sm text-center mt-1 text-[rgb(var(--text))]">Enter your HRMS credentials to log in</p>
 
         {/* Form */}
-        <form className="mt-8 space-y-5">
+        <form onSubmit={handleSubmit} className="mt-8 space-y-5">
           
           {/* Username */}
           <div>
