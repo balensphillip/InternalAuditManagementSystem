@@ -1,15 +1,26 @@
 import { useState } from "react";
 import { Eye, EyeOff, Lock, User, Sun, Moon } from "lucide-react";
 import useTheme from "../../hooks/useTheme";
+import {useAuth} from "../auth/auth.store.jsx";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
    const { theme, setTheme } = useTheme();
    const [showPassword, setShowPassword] = useState(false);
    const navigate = useNavigate();
+   const { login } = useAuth();
 
    const handleSubmit = (e) => {
-     e.preventDefault();  
+     e.preventDefault(); 
+     
+       // TEMP: mock login (replace with API later)
+    login({
+    id: 1,
+    name: "Phillip",
+    role: "AUDITOR",
+    token: "fake-jwt",
+  });
+
      navigate("/dashboard");
    };
  
