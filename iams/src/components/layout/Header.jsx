@@ -8,7 +8,7 @@ export default function Header() {
     <header className="h-16 px-6 flex items-center justify-between bg-[rgb(var(--card))] border-b border-[rgb(var(--border))]">
 
       {/* Left */}
-      <h1 className="text-lg font-semibold text-[rgb(var(--text))]">Internal Audit Management System</h1>
+      <h1 className="text-lg font-semibold text-[rgb(var(--text))]">IAMS</h1>
 
       {/* Right */}
       <div className="flex items-center gap-4">

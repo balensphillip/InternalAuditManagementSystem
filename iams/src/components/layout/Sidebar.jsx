@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {LayoutDashboard,ClipboardCheck,FileText,Users,Settings,ChevronLeft,ChevronRight} from "lucide-react";
+import {LayoutDashboard, ClipboardCheck, FileText, Users, Settings, ChevronLeft, ChevronRight, TextSearch } from "lucide-react";
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -18,7 +18,9 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="h-16 flex items-center justify-between px-4 border-b border-[rgb(var(--border))]">
         {!collapsed && (
-          <span className="font-semibold text-[rgb(var(--text))]">IAMS</span>)}
+          <span className="font-semibold text-[rgb(var(--text))]">
+            <img src="/audit.jpg" alt="Logo" className="h-10 w-10 rounded-full" />
+          </span>)}
         <button onClick={() => setCollapsed(!collapsed)} className="p-1 rounded hover:bg-[rgb(var(--background))]">
           {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </button>
