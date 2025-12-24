@@ -1,6 +1,9 @@
 import {FolderOpen, AlertTriangle, TrendingUp, Calendar} from "lucide-react";
 import Badge from "../../components/ui/Badge.jsx";
 import StatCard from "../../components/ui/StatCard.jsx";
+import BarChart from "../../components/graphs/Bar.jsx";  
+import PieChart from "../../components/graphs/Pie.jsx";
+import LineChart from "../../components/graphs/Line.jsx";
 
 export default function Dashboard() {
   return (
@@ -66,13 +69,23 @@ export default function Dashboard() {
         />
 
       </div>
+      {/* Bar Chart */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">  
+      <div className="bg-[rgb(var(--dashboard-card-bg))] p-4 rounded-lg shadow h-70">
+        <BarChart />
+      </div>
+      
+      <div className="bg-[rgb(var(--dashboard-card-bg))] p-4 rounded-lg shadow h-70">
+        <PieChart /> 
+      </div>
+
+      <div className="bg-[rgb(var(--dashboard-card-bg))] p-4 rounded-lg shadow h-70">
+        <LineChart /> 
+      </div>
+      </div>
     </div>
   );
 }
-
-/* =========================
-   Reusable Components
-   ========================= */
 
 
 
